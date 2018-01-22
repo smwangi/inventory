@@ -4,6 +4,7 @@ import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
 
 import com.samwan.inventory.ui.main.MenuListViewModel;
+import com.samwan.inventory.ui.product.ProductViewModel;
 import com.samwan.inventory.viewmodel.InventoryViewModelFactory;
 
 import dagger.Binds;
@@ -20,6 +21,10 @@ public abstract class ViewModelModule {
     @ViewModelKey(MenuListViewModel.class)
     abstract ViewModel bindsMovieListViewModel(MenuListViewModel movieListViewModel);
 
+    @Binds
+    @IntoMap
+    @ViewModelKey(ProductViewModel.class)
+    abstract ViewModel bindsProductViewModel(ProductViewModel productViewModel);
     @Binds
     abstract ViewModelProvider.Factory bindsViewModelFactory(InventoryViewModelFactory movieViewModelFactory);
 }

@@ -9,6 +9,8 @@ import static com.samwan.inventory.data.Status.SUCCESS;
 
 /**
  * Created by smwangi on 1/17/18.
+ * A generic class that holds a value with its loading status.
+ * @param <T>
  */
 
 public class Resource<T> {

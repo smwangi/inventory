@@ -2,6 +2,7 @@ package com.samwan.inventory.ui.main;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,6 +13,8 @@ import com.samwan.inventory.R;
 import com.samwan.inventory.data.local.entity.AppMenu;
 import com.samwan.inventory.databinding.FragmentMenuListBinding;
 import com.samwan.inventory.ui.BaseFragment;
+import com.samwan.inventory.ui.product.ProductActivity;
+import com.samwan.inventory.ui.product.ProductListFragment;
 
 /**
  * Created by smwangi on 1/17/18.
@@ -27,7 +30,8 @@ public class MenuListFragment extends BaseFragment<MenuListViewModel, FragmentMe
     }
     @Override
     public void onMenuClicked(AppMenu appMenu, View sharedView) {
-
+        ActivityOptionsCompat optionsCompat  = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(),sharedView,"sharedimage");
+        startActivity(ProductActivity.newIntent(getActivity(),appMenu.getPhoto()),optionsCompat.toBundle());
     }
 
     @Override
